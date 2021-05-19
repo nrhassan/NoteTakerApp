@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <title>Note Taker App</title>
+</head>
+<body>
+    <div class="front-page">
+        <h2 class="header">Note Taker App</h2>
+            <textarea id="note" name="note-text" class="note-area"></textarea>
+            <br>
+            <button id="submit" onclick="saveNote()" class="submit">Save Note</button>
+        <div class="notes-link">
+            <a href="index2.html" onclick="retrieveNote()">View Notes</a>
+        </div> 
+    </div>
+    <p id="test"></p>
+</body>
+
+<script>
+var textElement = document.getElementById("note")
+var pastNotes = [];
+
+function saveNote() {
+    var text;
+    
+    
+    text = document.querySelector('#note').value;
+    if(text.length > 0)
+    {
+        pastNotes.push(text);
+        localStorage.setItem('textinput', pastNotes);
+        alert("Note added!");
+    }
+    else{
+        alert("Please type something");
+    }
+    // document.getElementById("test").innerHTML=pastNotes.toString();
+}
+</script>
+<script src="index.js"></script>
