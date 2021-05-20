@@ -12,7 +12,7 @@
             <br>
             <button id="submit" onclick="saveNote()" class="submit">Save Note</button>
         <div class="notes-link">
-            <a href="index2.html" onclick="retrieveNote()">View Notes</a>
+            <a href="index2.html">View Notes</a>
         </div> 
     </div>
     <p id="test"></p>
@@ -25,18 +25,22 @@ var pastNotes = [];
 function saveNote() {
     var text;
     
-    
-    text = document.querySelector('#note').value;
+    //store value from input in variable
+    text = document.querySelector('#note').value; 
+    //check if user actually entered something
     if(text.length > 0)
     {
+        //if they did add it to the array
         pastNotes.push(text);
+        //store the new array in local storage
         localStorage.setItem('textinput', pastNotes);
+        //alert user that the new note is saved
         alert("Note added!");
     }
     else{
+        //tell user to enter something
         alert("Please type something");
     }
-    // document.getElementById("test").innerHTML=pastNotes.toString();
 }
 </script>
 <script src="index.js"></script>

@@ -4,14 +4,17 @@
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
 </head>
-
-<div class="second-page">
-    <ol id="notes-list">
-
-    </ol>
-</div>
-
-<a href="index.html"><h3>Back</h3></a>
+<!-- added a body tag so i could use onload to call function -->
+<body onload="retrieveNote()">
+    <p id="array"></p>
+    <div class="second-page">
+        <ol id="notes-list">
+    
+        </ol>
+    </div>
+    
+    <a href="index.html"><h3>Back</h3></a>    
+</body>
 
 
 <script>
